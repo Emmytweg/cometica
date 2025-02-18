@@ -17,7 +17,7 @@ const Home = () => {
   }, [darkMode]);
 
   return (
-    <div className="font-['Sora'] bg-opacity-35 backdrop-blur-lg">
+    <div className="font-['Sora'] bg-opacity-35 backdrop-blur-lg" data-aos='drop-down'>
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
       <WelcomeHome darkMode={darkMode} />
