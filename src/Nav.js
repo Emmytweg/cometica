@@ -1,13 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { IconMenu, IconSunHigh, IconSearch, IconX, IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 import Logo from './Screenshot_2025-02-10_055627-removebg-preview.png';
 import LogoTwo from './image-removebg-preview.png';
-
+import { SearchContext } from './SearchContext';
 export const Nav = ({ darkMode, setDarkMode }) => {
     const [showNav, setShowNav] = useState(false);
     const [showProducts, setShowProducts] = useState(false);
     const [showShortBy, setShowShortBy] = useState(false);
+    const { searchableData } = useContext(SearchContext); // Get global data
+    const [searchQuery, setSearchQuery] = useState("");
+    const [searchResults, setSearchResults] = useState([]);
+    const [showSearch, setShowSearch] = useState(false);
+    const toggleSearch = () => setShowSearch(!showSearch);
+  // Search Function
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+    if (query.trim() === "") {
+        setSearchResults([]);
+        return;
+    }
+ // Filter through local component data
+ const results = searchableData.filter((item) =>
+    item.name.toLowerCase().includes(query.toLowerCase())
+);
+
+setSearchResults(results);
+};
 
     useEffect(() => {
         if (showNav) {
@@ -79,7 +98,38 @@ export const Nav = ({ darkMode, setDarkMode }) => {
             {/* Icons */}
             <div className='flex items-center gap-x-4'>
                 <IconSunHigh onClick={toggleDarkMode} className='cursor-pointer' />
-                <IconSearch className='cursor-pointer' />
+               {/* Search Icon */}
+            <IconSearch className='cursor-pointer' onClick={toggleSearch} />
+
+                {/* Search Bar */}
+            {showSearch && (
+                <div className={`fixed top-0 left-0 h-full w-full p-5 flex flex-col gap-5 sm:w-96 font-['Sora', sans-serif] transition-transform transform ${darkMode ? 'bg-black text-white' : 'bg-white text-[#333] shadow-md'} max-h-screen overflow-y-auto`}>
+                    <div className="flex items-center border-b pb-2">
+                        <IconSearch className="text-gray-500" />
+                        <input
+                            type="text"
+                            placeholder="Search..."
+                            className="w-full p-2 outline-none bg-transparent"
+                            value={searchQuery}
+                            onChange={(e) => handleSearch(e.target.value)}
+                        />
+                        <IconX className="cursor-pointer" onClick={toggleSearch} />
+                    </div>
+
+                    {/* Search Results */}
+                    {searchResults.length > 0 ? (
+                        <ul className="mt-3">
+                            {searchResults.map((result) => (
+                                <li key={result.id} className="p-2 hover:bg-gray-inherit rounded-md">
+                                    <Link to={result.link}>{result.name}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : searchQuery ? (
+                        <p className="text-gray-500 mt-2">No results found</p>
+                    ) : null}
+                </div>
+            )}
             </div>
         </nav>
     );
