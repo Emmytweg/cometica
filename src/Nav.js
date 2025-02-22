@@ -63,7 +63,7 @@ setSearchResults(results);
                         </div>
                         {showProducts && (
                             <ul className='pl-4 font-bold border-b'>
-                                {['Advisable', 'Best-Seller', 'Alphabetically A-Z', 'Alphabetically Z-A', 'Price: Low to High', 'Price: High to Low', 'Date: Old to New', 'Date: New to Old'].map((item) => (
+                                {['Advisable', 'Best-Seller', 'Alphabetically A-Z', 'Alphabetically Z-A', 'Price: Low to High', 'Price: High to Low'].map((item) => (
                                     <li key={item} className='p-4 border-b'><Link to="">{item}</Link></li>
                                 ))}
                             </ul>
