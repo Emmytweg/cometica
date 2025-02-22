@@ -8,7 +8,9 @@ import "react-medium-image-zoom/dist/styles.css";
 import { AllProductsArray } from "./AllProductsArray";
 import SizeSelector from "./SizeSelector";
 import ProductDescription from "./ProductDescription";
-
+import ProductPageExtra from "./ProductPageExtra";
+import Testimonials from "./Testimonials";
+import SimilarProducts from "./SimilarProducts";
 const ProductPage = () => {
   const { productId } = useParams();
   const parsedProductId = Number(productId);
@@ -109,10 +111,14 @@ const ProductPage = () => {
 
             <SizeSelector />
             <ProductDescription />
-
         
           </div>
+     
         </div>
+        <ProductPageExtra />
+       <Testimonials />
+       <SimilarProducts productType={product.type}/>
+
       </div>
     </div>
   );
