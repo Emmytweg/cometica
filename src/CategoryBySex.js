@@ -1,43 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React from 'react'
+import { useState, useEffect } from 'react';
 import { IconChevronsLeft, IconChevronsRight } from "@tabler/icons-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import { AllProductsArray } from "./AllProductsArray";
+const CategoryBySex = ({productGender, darkMode}) => {
 
-const SimilarProducts = ({ darkMode, productType }) => {  // Accept `productType`
     const [currentSlideOne, setCurrentSlideOne] = useState(0);
-    const itemsPerPage = 4;
-  
-    useEffect(() => {
-      AOS.init({ duration: 1000 });
-    }, []);
-  
-    // 🔥 Dynamically filter based on the given productType
-    const trendingProducts = Object.values(AllProductsArray)
-      .flat()
-      .filter((product) => product.type === productType);  // Match current product's type
-  
-  
-    const nextSlideOne = () => {
-      if (currentSlideOne + itemsPerPage < trendingProducts.length) {
-        setCurrentSlideOne((prev) => prev + itemsPerPage);
-      }
-    };
-  
-    const prevSlideOne = () => {
-      if (currentSlideOne - itemsPerPage >= 0) {
-        setCurrentSlideOne((prev) => prev - itemsPerPage);
-      }
-    };
-  
-    const displayedItemsOne = trendingProducts.slice(currentSlideOne, currentSlideOne + itemsPerPage);
-  
-    return (
-      <section className="p-6">
+        const itemsPerPage = 4;
+      
+        useEffect(() => {
+          AOS.init({ duration: 1000 });
+        }, []);
+      
+        // 🔥 Dynamically filter based on the given productType
+        const trendingProducts = Object.values(AllProductsArray)
+          .flat()
+          .filter((product) => product.gender === productGender);  // Match current product's type
+      
+        console.log(trendingProducts); // Debugging check
+      
+        const nextSlideOne = () => {
+          if (currentSlideOne + itemsPerPage < trendingProducts.length) {
+            setCurrentSlideOne((prev) => prev + itemsPerPage);
+          }
+        };
+      
+        const prevSlideOne = () => {
+          if (currentSlideOne - itemsPerPage >= 0) {
+            setCurrentSlideOne((prev) => prev - itemsPerPage);
+          }
+        };
+      
+        const displayedItemsOne = trendingProducts.slice(currentSlideOne, currentSlideOne + itemsPerPage);
+  return (
+    <div>
+        <section className="p-6">
         <h1 className="uppercase font-bold text-4xl text-center mt-20" data-aos="fade-up">
-          <p className="text-[15px]">RECOMMENDATIONS FOR YOU</p>
-          SIMILAR PRODUCTS
+        CATEGORY BY SEX
         </h1>
   
         {/* First Slide */}
@@ -93,8 +94,8 @@ const SimilarProducts = ({ darkMode, productType }) => {  // Accept `productType
           </button>
         </div>
       </section>
-    );
-  };
-  
-  
-export default SimilarProducts;
+    </div>
+  )
+}
+
+export default CategoryBySex

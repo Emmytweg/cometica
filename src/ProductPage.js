@@ -11,6 +11,10 @@ import ProductDescription from "./ProductDescription";
 import ProductPageExtra from "./ProductPageExtra";
 import Testimonials from "./Testimonials";
 import SimilarProducts from "./SimilarProducts";
+import CategoryBySex from "./CategoryBySex";
+import OurProducts from "./OurProducts";
+import Footer from "./Footer";
+import NewsletterSection from "./NewsletterSection";
 const ProductPage = () => {
   const { productId } = useParams();
   const parsedProductId = Number(productId);
@@ -118,7 +122,10 @@ const ProductPage = () => {
         <ProductPageExtra />
        <Testimonials />
        <SimilarProducts productType={product.type}/>
-
+<CategoryBySex productGender={product.gender} />
+<OurProducts />
+<NewsletterSection />
+<Footer darkMode={darkMode} />
       </div>
     </div>
   );

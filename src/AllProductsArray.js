@@ -113,6 +113,7 @@ export const AllProductsArray = {
           type: 'Jeans',
           gender: 'MEN',
           stock: 'FULL-STOCK',
+          isProduct : true,
           discountPrice: 50.0,
           discount: '50%',
           actualPrice: 100,
@@ -137,6 +138,8 @@ export const AllProductsArray = {
           stock: 'FULL-STOCK',
           discountPrice: 50.0,
           discount: '50%',
+          isProduct : true,
+
           actualPrice: 100,
           availableStyle: '3 Styles Available',
           mainImg: whiteJean1,
@@ -156,6 +159,8 @@ export const AllProductsArray = {
           clotheName: 'Black Jean',
           type: 'Jeans',
           gender: 'MEN',
+          isProduct : true,
+
           stock: 'PROMOTIONS',
           discountPrice: 50.0,
           discount: '50%',
@@ -176,6 +181,8 @@ export const AllProductsArray = {
           clotheName: 'Comfort Curves',
           type: 'Jeans',
           gender: 'WOMAN',
+          isProduct : true,
+
           stock: 'FULL-STOCK',
           discountPrice: 50.0,
           discount: '50%',
@@ -197,6 +204,8 @@ export const AllProductsArray = {
           clotheName: 'High Rise Hustle',
           type: 'Jeans',
           gender: 'WOMAN',
+          isProduct : true,
+
           stock: 'FULL-STOCK',
           discountPrice: 150.0,
           discount: '50%',
@@ -218,6 +227,8 @@ export const AllProductsArray = {
           clotheName: 'Vintage Vibes',
           type: 'Jeans',
           gender: 'WOMAN',
+          isProduct : true,
+
           stock: 'FULL-STOCK',
           discountPrice: 50.0,
           discount: '50%',
@@ -244,6 +255,8 @@ export const AllProductsArray = {
           clotheName: 'Shirt White',
           type: 'Shirt',
           gender: 'MEN',
+          isProduct : true,
+
           discountPrice: 94.0,
           availableStyle: '3 Styles Available',
           discount: '25%',
@@ -265,6 +278,8 @@ export const AllProductsArray = {
           clotheName: 'Shirt Black',
           type: 'Shirt',
           gender: 'MEN',
+          isProduct : true,
+
           discountPrice: 100.0,
           availableStyle: '3 Styles Available',
           discount: '50%',
@@ -287,6 +302,7 @@ export const AllProductsArray = {
           clotheName: 'Shirt Green',
           type: 'Shirt',
           gender: 'MEN',
+          isProduct : true,
 
           discountPrice: 94.0,
           availableStyle: '3 Styles Available',
@@ -305,10 +321,11 @@ export const AllProductsArray = {
           order: ['Price, from low to high'],
         },
         {
-          id: 9,
+          id: 10,
           clotheName: 'Shirt White Women',
           type: 'Shirt',
           gender: 'WOMAN',
+          isProduct : true,
 
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
@@ -319,16 +336,18 @@ export const AllProductsArray = {
           carouselImg: [shirtWhiteWomen, shirtWhiteWomen2, shirtWhiteWomen3],
           link: 'shirt-white-women',
           variantImage: [
-            { productId: 4, imageUrl: shirtWhiteWomen },
-            { productId: 2, imageUrl: shirtBlack },
-            { productId: 3, imageUrl: shirtGreen },
+            { productId: 10, imageUrl: shirtWhiteWomen },
+            { productId: 12, imageUrl: shirtBlueWomen },
+            { productId:11, imageUrl: shirtGreenWomen },
           ],
           order: ['Price, from low to high'],
         },
         {
-          id: 10,
+          id: 11,
           clotheName: 'Shirt Green Women',
           type: 'Shirt',
+          isProduct : true,
+
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -340,18 +359,19 @@ export const AllProductsArray = {
           carouselImg: [shirtGreenWomen, shirtGreenWomen2, shirtGreenWomen3],
           link: 'shirt-green-women',
           variantImage: [
-            { productId: 5, imageUrl: shirtGreenWomen },
-            { productId: 2, imageUrl: shirtBlack },
-            { productId: 1, imageUrl: shirtWhite },
+            { productId: 11, imageUrl: shirtGreenWomen },
+            { productId: 12, imageUrl: shirtBlueWomen },
+            { productId: 10, imageUrl: shirtWhiteWomen },
           ],
           productCategory: ['Advisable', 'Best Seller'],
           order: ['Price, from low to high'],
         },
         {
-          id: 11,
+          id: 12,
           clotheName: 'Shirt Blue Women',
           type: 'Shirt',
           gender: 'WOMAN',
+          isProduct : true,
 
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
@@ -362,9 +382,9 @@ export const AllProductsArray = {
           carouselImg: [shirtBlueWomen, shirtBlueWomen2, shirtBlueWomen3],
           link: 'shirt-blue-women',
           variantImage: [
-            { productId: 6, imageUrl: shirtBlueWomen },
-            { productId: 2, imageUrl: shirtBlack },
-            { productId: 3, imageUrl: shirtGreen },
+            { productId: 12, imageUrl: shirtBlueWomen },
+            { productId: 10, imageUrl: shirtWhiteWomen },
+            { productId: 11, imageUrl: shirtGreenWomen },
           ],
           order: ['Price, from low to high'],
           trending: true,
@@ -373,11 +393,12 @@ export const AllProductsArray = {
 
       tShirt: [
         {
-          id: 12,
+          id: 13,
           clotheName: 'T-Shirt Black Kids',
           type: 'T-Shirt',
           discountPrice: 50.0,
-          
+          isProduct : true,
+
 
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -387,35 +408,39 @@ export const AllProductsArray = {
           carouselImg: [tShirtBlackKids, tShirtBlackKids2, tShirtBlackKids3],
           link: 't-shirt-black-kids',
           variantImage: [
-            { productId: 1, imageUrl: tShirtBlackKids },
-            { productId: 2, imageUrl: tShirtWhiteKids },
-            { productId: 3, imageUrl: tShirtGreenKids },
+            { productId: 13, imageUrl: tShirtBlackKids },
+            { productId: 14, imageUrl: tShirtWhiteKids },
+            { productId: 15, imageUrl: tShirtGreenKids },
           ],
           order: ['Price, from low to high'],
         },
         {
-          id: 13,
+          id: 14,
           clotheName: 'T-Shirt White Kids',
           type: 'T-Shirt',
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
+          isProduct : true,
+
           actualPrice: 100.0,
           stock: 'PROMOTIONS',
           mainImg: tShirtWhiteKids,
           carouselImg: [tShirtWhiteKids, tShirtWhiteKids2, tShirtWhiteKids3],
           link: 't-shirt-white-kids',
           variantImage: [
-            { productId: 2, imageUrl: tShirtWhiteKids },
-            { productId: 1, imageUrl: tShirtBlackKids },
-            { productId: 3, imageUrl: tShirtGreenKids },
+            { productId: 14, imageUrl: tShirtWhiteKids },
+            { productId: 13, imageUrl: tShirtBlackKids },
+            { productId: 15, imageUrl: tShirtGreenKids },
           ],
           order: ['Price, from low to high'],
         },
         {
-          id: 14,
+          id: 15,
           clotheName: 'T-Shirt Green Kids',
           type: 'T-Shirt',
+          isProduct : true,
+
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -425,17 +450,18 @@ export const AllProductsArray = {
           carouselImg: [tShirtGreenKids, tShirtGreenKids2, tShirtGreenKids3],
           link: 't-shirt-green-kids',
           variantImage: [
-            { productId: 3, imageUrl: tShirtGreenKids },
-            { productId: 1, imageUrl: tShirtBlackKids },
-            { productId: 2, imageUrl: tShirtWhiteKids },
+            { productId: 15, imageUrl: tShirtGreenKids },
+            { productId: 13, imageUrl: tShirtBlackKids },
+            { productId: 14, imageUrl: tShirtWhiteKids },
           ],
           order: ['Price, from low to high'],
         },
         {
-          id: 15,
+          id: 16,
           clotheName: 'T-Shirt Black Women',
           type: 'T-Shirt',
           gender: 'WOMAN',
+          isProduct : true,
 
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
@@ -446,16 +472,17 @@ export const AllProductsArray = {
           carouselImg: [tShirtBlackWoman, tShirtBlackWoman2, tShirtBlackWoman3],
           link: 't-shirt-black-women',
           variantImage: [
-            { productId: 4, imageUrl: tShirtBlackWoman },
-            { productId: 5, imageUrl: tshirtGreenWoman },
+            { productId: 16, imageUrl: tShirtBlackWoman },
+            { productId: 17, imageUrl: tshirtGreenWoman },
           ],
           order: ['Price, from low to high'],
         },
         {
-          id: 16,
+          id: 17,
           clotheName: 'T-Shirt Green Women',
           type: 'T-Shirt',
           gender: 'WOMAN',
+          isProduct : true,
 
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
@@ -466,8 +493,8 @@ export const AllProductsArray = {
           carouselImg: [tshirtGreenWoman, tshirtGreenWoman2, tshirtGreenWoman3],
           link: 't-shirt-green-women',
           variantImage: [
-            { productId: 5, imageUrl: tshirtGreenWoman },
-            { productId: 4, imageUrl: tShirtBlackWoman },
+            { productId: 17, imageUrl: tshirtGreenWoman },
+            { productId: 16, imageUrl: tShirtBlackWoman },
           ],
           productCategory: 'Advisable',
           order: ['Price, from low to high'],
@@ -476,9 +503,11 @@ export const AllProductsArray = {
       ],
       sneakers: [
         {
-          id: 17,
+          id: 18,
           clotheName: 'Sneaker Blue',
           type: 'Sneakers',
+          isProduct : true,
+
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -488,17 +517,19 @@ export const AllProductsArray = {
           carouselImg: [sneakerBlue, sneakerBlue2, sneakerBlue3],
           link: 'sneaker-blue',
           variantImage: [
-            { productId: 1, imageUrl: sneakerBlue },
-            { productId: 2, imageUrl: sneakerBlack },
-            { productId: 3, imageUrl: sneakerWhite },
+            { productId: 18, imageUrl: sneakerBlue },
+            { productId: 19, imageUrl: sneakerBlack },
+            { productId: 20, imageUrl: sneakerWhite },
           ],
           productCategory: 'Advisable',
           order: ['Price, from low to high'],
         },
         {
-          id: 18,
+          id: 19,
           clotheName: 'Sneaker Black',
           type: 'Sneakers',
+          isProduct : true,
+
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -508,18 +539,20 @@ export const AllProductsArray = {
           carouselImg: [sneakerBlack, sneakerBlack2, sneakerBlack3],
           link: 'sneaker-black',
           variantImage: [
-            { productId: 2, imageUrl: sneakerBlack },
-            { productId: 1, imageUrl: sneakerBlue },
-            { productId: 3, imageUrl: sneakerWhite },
+            { productId: 19, imageUrl: sneakerBlack },
+            { productId: 18, imageUrl: sneakerBlue },
+            { productId: 20, imageUrl: sneakerWhite },
           ],
           productCategory: 'Advisable',
           order: ['Alphabetically-AZ', 'Alphabetically-ZA', 'Price, from low to high'],
           trending: true,
         },
         {
-          id: 19,
+          id: 20,
           clotheName: 'Sneaker White',
           type: 'Sneakers',
+          isProduct : true,
+
           discountPrice: 50.0,
           availableStyle: '2 Styles Available',
           discount: '50%',
@@ -529,9 +562,9 @@ export const AllProductsArray = {
           carouselImg: [sneakerWhite, sneakerWhite2, sneakerWhite3],
           link: 'sneaker-white',
           variantImage: [
-            { productId: 3, imageUrl: sneakerWhite },
-            { productId: 2, imageUrl: sneakerBlack },
-            { productId: 1, imageUrl: sneakerBlue },
+            { productId: 20, imageUrl: sneakerWhite },
+            { productId: 19, imageUrl: sneakerBlack },
+            { productId: 18, imageUrl: sneakerBlue },
           ],
           productCategory: 'Advisable',
           order: ['Price, from low to high'],
@@ -544,6 +577,8 @@ export const AllProductsArray = {
             id: 3,
             clotheName: 'Black Jean',
             type: 'Jeans',
+            isProduct : true,
+
             gender: 'MEN',
             stock: 'PROMOTIONS',
             discountPrice: 50.00,
@@ -553,13 +588,19 @@ export const AllProductsArray = {
             mainImg: blackJean,
             carouselImg: [blackJean, blackJean2, blackJean3],
             link: 'black-jean',
-            variantImage: [blackJean, whiteJean1, blueJean],
-            order: ['Alphabetically-AZ', 'Alphabetically-ZA', 'Price, from low to high']
+            variantImage: [
+              { productId: 3, imageUrl: blackJean },
+              { productId: 2, imageUrl: whiteJean1 },
+              { productId: 1, imageUrl: blueJean },
+            ],
+                  order: ['Alphabetically-AZ', 'Alphabetically-ZA', 'Price, from low to high']
         },
         {
-            id: 13,
+            id: 14,
             clotheName: 'T-Shirt White Kids',
             type: 'T-Shirt',
+            isProduct : true,
+
             discountPrice: 50.00,
             availableStyle: '2 Styles Available',
             discount: '50%',
@@ -568,8 +609,12 @@ export const AllProductsArray = {
             mainImg: tShirtWhiteKids,
             carouselImg: [tShirtWhiteKids, tShirtWhiteKids2, tShirtWhiteKids3],
             link: 't-shirt-white-kids',
-            variantImage: [tShirtWhiteKids, tShirtBlackKids, tShirtGreenKids],
-            order: ['Price, from low to high']
+            variantImage: [
+              { productId: 14, imageUrl: tShirtWhiteKids },
+              { productId: 13, imageUrl: tShirtBlackKids },
+              { productId: 15, imageUrl: tShirtGreenKids },
+            ],
+                        order: ['Price, from low to high']
         }
     ]
 }

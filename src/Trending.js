@@ -44,6 +44,7 @@ const Trending = ({ darkMode }) => {
 
   const displayedItemsOne = trendingProducts.slice(currentSlideOne, currentSlideOne + itemsPerPage);
   const displayedItemsTwo = trendingProducts.slice(currentSlideTwo, currentSlideTwo + itemsPerPage);
+  
 
   return (
     <section className="p-6">
@@ -118,8 +119,8 @@ const Trending = ({ darkMode }) => {
                 }`}
                 data-aos="fade-up"
               >
-                <Link to={product.link} key={index}>
-                <div
+    <Link to={`/product/${product.id}`} key={index}>             
+   <div
         key={index}
         className={`p-4 rounded-lg shadow-lg relative min-w-[200px] transition-all duration-500 ease-in-out transform ${
           currentSlideTwo ? "translate-x-[-10%] opacity-100" : "translate-x-0 opacity-100"

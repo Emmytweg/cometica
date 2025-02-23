@@ -5,12 +5,12 @@ const NewsletterSection = ({ darkMode }) => {
   return (
     <section 
       className={`relative flex flex-col items-center justify-center p-10 text-center min-h-[50vh] 
-                 bg-contain bg-center animate-slideBg transition-all duration-500 
+                 bg-contain bg-center animate-slideBg transition-all duration-50 
                  ${darkMode ? "opacity-80 border-b-2 border-b-black " : "opacity-80  border-b-1 border-b-white "}`}
       style={{ backgroundImage: `url(${movingPic})` }}
     >
       {/* Dark Mode Adaptive Overlay */}
-      <div className={`absolute inset-0 ${darkMode ? "bg-black bg-opacity-60" : "bg-white bg-opacity-20"}`}></div>
+      <div className={`absolute inset-0 ${darkMode ? "bg-black bg-opacity-60" : "bg-white bg-opacity-0"}`}></div>
 
       {/* Form & Text (Static) */}
       <h1 className={`uppercase text-4xl font-extrabold  relative z-10 *(${ darkMode ? 'text-black' : 'text-white' }`} data-aos='zoom-in'>
