@@ -49,7 +49,7 @@ const ProductPage = () => {
   return (
     <div className="font-[sora]">
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
-      <div className="container mx-auto p-10">
+      <div className="container mx-auto p-5 mt-5 lg:p-10">
         <div className="grid md:grid-cols-2 gap-8 py-12 mt-3">
           {/* Product Images Carousel */}
           <Carousel className="w-full" showThumbs={false}>

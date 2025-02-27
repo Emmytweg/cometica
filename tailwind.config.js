@@ -17,9 +17,9 @@ module.exports = {
       },
       keyframes: {
         slideBg: {
-          "0%": { backgroundPosition: "150% center" },
-          "50%": { backgroundPosition: "50% center" },
-          "100%": { backgroundPosition: "-50% center" },
+          "0%": { backgroundPosition: "150% " },
+          "50%": { backgroundPosition: "50% " },
+          "100%": { backgroundPosition: "-50% " },
         },
       },
       animation: {

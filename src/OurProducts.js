@@ -74,7 +74,7 @@ const OurProducts = ({darkMode}) => {
                         </div>
                         {/* Discount & Actual Price */}
                         <div className="flex flex-col items-start gap-5">
-                          <span className={`${darkMode ? 'bg-inherit text-black shadow-xl' : 'bg-inherit text-white shadow-xl'} px-2 py-1 text-xs font-bold rounded`}>{product.discount}</span>
+                          <span className={` px-2 py-1 text-xs font-bold rounded`}>{product.discount}</span>
                           <p className="text-gray-400 line-through">${product.actualPrice}</p>
                         </div>
                       </div>
