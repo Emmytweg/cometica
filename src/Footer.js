@@ -26,7 +26,7 @@ const Footer = ({darkMode}) => {
         <IconBrandLinkedinFilled />
         <IconBrandTiktokFilled />
     </div>
-    <p className={`text-[15px] font-extrabold w-screen  lg:w-1/2 ${darkMode ? 'text-white' : 'text-black'}`}>
+    <p className={`text-[15px] font-extrabold w-[90vw]  lg:w-1/2 ${darkMode ? 'text-white' : 'text-black'}`}>
     Welcome to, your fashion destination. Discover the latest trends, find perfect pieces for your wardrobe, and enjoy seamless online shopping.
     </p>
 
