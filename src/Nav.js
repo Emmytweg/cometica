@@ -4,15 +4,20 @@ import { Link } from 'react-router-dom';
 import Logo from './Screenshot_2025-02-10_055627-removebg-preview.png';
 import LogoTwo from './image-removebg-preview.png';
 import { SearchContext } from './SearchContext';
-export const Nav = ({ darkMode, setDarkMode }) => {
+
+
+export const Nav = ({ darkMode, setDarkMode,  }) => {
+    const [navProductsArray, setNavProductsArray] = useState(['Advisable', 'Best-Seller', 'Alphabetically A-Z', 'Alphabetically Z-A', 'Price: Low to High', 'Price: High to Low'])
     const [showNav, setShowNav] = useState(false);
     const [showProducts, setShowProducts] = useState(false);
+    
     const [showShortBy, setShowShortBy] = useState(false);
     const { searchableData } = useContext(SearchContext); // Get global data
     const [searchQuery, setSearchQuery] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [showSearch, setShowSearch] = useState(false);
     const toggleSearch = () => setShowSearch(!showSearch);
+
   // Search Function
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -62,11 +67,16 @@ setSearchResults(results);
                             PRODUCTS {showProducts ? <IconChevronUp /> : <IconChevronDown />}
                         </div>
                         {showProducts && (
-                            <ul className='pl-4 font-bold border-b'>
-                                {['Advisable', 'Best-Seller', 'Alphabetically A-Z', 'Alphabetically Z-A', 'Price: Low to High', 'Price: High to Low'].map((item) => (
-                                    <li key={item} className='p-4 border-b'><Link to="">{item}</Link></li>
-                                ))}
-                            </ul>
+                             <ul className='pl-4 font-bold border-b'>
+                             
+                             <li  className='p-4 border-b'><Link to="/advisable">Advisable</Link></li>
+                             <li  className='p-4 border-b'><Link to="">Best-Seller</Link></li>
+                             <li  className='p-4 border-b'><Link to="/alphabetically-a-z">Alphabetically A-Z</Link></li>
+                             <li  className='p-4 border-b'><Link to="/alphabetically-z-a">Alphabetically Z-A</Link></li>   
+                             <li  className='p-4 border-b'><Link to="/price-low-to-high">Price: Low to High</Link></li>   
+                             <li  className='p-4 border-b'><Link to="/price-high-to-low">Price: High to Low</Link></li>                                           
+
+</ul>
                         )}
                     </li>
 
@@ -77,9 +87,13 @@ setSearchResults(results);
                         </div>
                         {showShortBy && (
                             <ul className='pl-4 font-bold border-b'>
-                                {['Jeans', 'Shirt', 'T-Shirts', 'Sneakers', 'Promotions'].map((item) => (
-                                    <li key={item} className='p-4 border-b'><Link to="">{item}</Link></li>
-                                ))}
+                             
+                                                                    <li  className='p-4 border-b'><Link to="/jeans">Jeans</Link></li>
+                                                                    <li  className='p-4 border-b'><Link to="/shirts">Shirt</Link></li>
+                                                                    <li  className='p-4 border-b'><Link to="/tshirts">T-Shirts</Link></li>
+                                                                    <li  className='p-4 border-b'><Link to="/sneakers">Sneakers</Link></li>   
+                                                                    <li  className='p-4 border-b'><Link to="/promotions">Promotions</Link></li>                                             
+
                             </ul>
                         )}
                     </li>

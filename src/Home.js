@@ -15,7 +15,8 @@ const Home = () => {
     document.body.className = darkMode ? "bg-black text-white" : "bg-white text-[#333]";
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
-
+    const [navProductsArray, setNavProductsArray] = useState(['Advisable', 'Best-Seller', 'Alphabetically A-Z', 'Alphabetically Z-A', 'Price: Low to High', 'Price: High to Low'])
+console.log(navProductsArray)
   return (
     <div className="font-['Sora'] bg-opacity-35 backdrop-blur-lg" data-aos='drop-down'>
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -24,7 +25,7 @@ const Home = () => {
       <Elevate darkMode={darkMode} />
       <Trending darkMode={darkMode}/>
       <NewsletterSection darkMode={darkMode}/>
-      <Footer darkMode={darkMode}/>
+      <Footer navProductsArray={navProductsArray} darkMode={darkMode}/>
     </div>
   );
 };
