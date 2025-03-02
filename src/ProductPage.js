@@ -15,9 +15,24 @@ import CategoryBySex from "./CategoryBySex";
 import OurProducts from "./OurProducts";
 import Footer from "./Footer";
 import NewsletterSection from "./NewsletterSection";
+import CartSidebar from "./CartSideBar";
 const ProductPage = () => {
   const { productId } = useParams();
   const parsedProductId = Number(productId);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+  const handleAddToCart = () => {
+    setCartItems([
+      ...cartItems,
+      {
+        id: product.id,
+        name: product.clotheName,
+        price: product.discountPrice,
+        image: product.carouselImg[0],
+      },
+    ]);
+    setCartOpen(true);
+  };
 
   // 🛑 Moved hooks before any return statements
   const [darkMode, setDarkMode] = useState(
@@ -45,7 +60,9 @@ const ProductPage = () => {
   if (!product) {
     return <h2 className="text-center mt-10 text-2xl">Product not found</h2>;
   }
-
+  const removeFromCart = (id) => {
+    setCartItems(cartItems.filter((item) => item.id !== id));
+  };
   return (
     <div className="font-[sora]">
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -115,7 +132,9 @@ const ProductPage = () => {
 
             <SizeSelector />
             <ProductDescription />
-        
+            <button  onClick={handleAddToCart} className=" w-96 flex justify-center m-auto mt-3 p-3 bg-white text-black hover:bg-gray-500">
+        Purchase Now
+      </button>
           </div>
      
         </div>
@@ -125,7 +144,13 @@ const ProductPage = () => {
 <CategoryBySex productGender={product.gender} />
 <OurProducts />
 <NewsletterSection />
-<Footer darkMode={darkMode} />
+{/* Sidebar */}
+<CartSidebar
+        cartItems={cartItems}
+        isOpen={cartOpen}
+        onClose={() => setCartOpen(false)}
+        removeFromCart={removeFromCart} // ✅ Fix: Ensure function is passed
+      /><Footer darkMode={darkMode} />
       </div>
     </div>
   );

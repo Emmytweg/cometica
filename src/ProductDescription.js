@@ -51,9 +51,7 @@ const ProductDescription = () => {
         {showDelivery && <p>{productDescribe[2]?.deliveryAndReturns || "Delivery info not available"}</p>}
       </div>
 
-      <button className="w-full h-full mt-3 p-3 bg-white text-black hover:bg-gray-500">
-        Purchase Now
-      </button>
+      
     </div>
   );
 };
