@@ -49,8 +49,8 @@ const AlphabeticallyZA = () => {
 
   return (
     <div>
-      <Nav navProductsArray={navProductsArray} darkMode={darkMode} setDarkMode={setDarkMode} />
-
+       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+ 
       {/* Breadcrumb & Sort Dropdown */}
       <div className="mt-40 flex justify-between p-6">
         <div>
@@ -61,7 +61,7 @@ const AlphabeticallyZA = () => {
         <div className="relative inline-block w-64">
           <button
             className="bg-inherit font-semibold focus:outline-none px-4 py-2 rounded w-full text-left flex items-center justify-between  border-gray-400 dark:border-gray-700"
-            onClick={toggleDropdown}
+             onClick={toggleDropdown}
           >
             <span className="flex items-center gap-2">
               {selectedOption && <IconCheck size={16} className="text-inherit" />} {selectedOption || "Sort By"}

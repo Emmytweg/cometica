@@ -70,7 +70,7 @@ setSearchResults(results);
                              <ul className='pl-4 font-bold border-b'>
                              
                              <li  className='p-4 border-b'><Link to="/advisable">Advisable</Link></li>
-                             <li  className='p-4 border-b'><Link to="">Best-Seller</Link></li>
+                             <li  className='p-4 border-b'><Link to="/best-seller">Best-Seller</Link></li>
                              <li  className='p-4 border-b'><Link to="/alphabetically-a-z">Alphabetically A-Z</Link></li>
                              <li  className='p-4 border-b'><Link to="/alphabetically-z-a">Alphabetically Z-A</Link></li>   
                              <li  className='p-4 border-b'><Link to="/price-low-to-high">Price: Low to High</Link></li>   

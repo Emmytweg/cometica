@@ -21,10 +21,10 @@ const AdvisablePageProducts = () => {
                        <img src={product.mainImg} alt={product.clotheName} className="w-full h-60 object-cover" />
               {/* Stock Label */}
               {product.stock && (
-                        <span className="absolute top-2 right-2 bg-white text-black px-2 py-1 text-xs font-bold rounded">
-                          {product.stock}
-                        </span>
-                      )}
+                  <span className="absolute top-2 right-2 bg-white text-black px-2 py-1 text-xs font-bold rounded">
+                    {product.stock}
+                  </span>
+                )}
                       <div className="flex justify-between items-center">
    {/* Content */}
 

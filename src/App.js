@@ -21,6 +21,8 @@ import BlogDetail from "./FullBlog";
 import FullBlog from "./FullBlog";
 import FAQ from "./FAQ";
 import ContactForm from "./ContactForm";
+import PrivacyPolicy from "./PrivacyPolicy";
+import TermsAndConditions from "./TermsAndConditions";
 function App() {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
@@ -36,7 +38,7 @@ function App() {
     <SearchProvider>
       <Router>
         {/* Navbar */}
-        <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+        {/* <Nav darkMode={darkMode} setDarkMode={setDarkMode} /> */}
         
         <Routes>
           <Route path="/" element={<Home />} />
@@ -56,6 +58,8 @@ function App() {
           <Route path= '/blog/:id' element={< FullBlog/>} />
           <Route path="/faq" element={< FAQ/>} darkMode={darkMode} />
           <Route path="/contact" element={< ContactForm/>} darkMode={darkMode} />
+          <Route path="/privacy" element={< PrivacyPolicy/>} darkMode={darkMode} />
+          <Route path="/terms" element={< TermsAndConditions/>} darkMode={darkMode} />
 
         </Routes>
       </Router>
