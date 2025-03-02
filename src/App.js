@@ -23,6 +23,7 @@ import FAQ from "./FAQ";
 import ContactForm from "./ContactForm";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsAndConditions from "./TermsAndConditions";
+import NotFound from "./NotFound";
 function App() {
   const [darkMode, setDarkMode] = useState(
     JSON.parse(localStorage.getItem("darkMode")) || false
@@ -60,6 +61,7 @@ function App() {
           <Route path="/contact" element={< ContactForm/>} darkMode={darkMode} />
           <Route path="/privacy" element={< PrivacyPolicy/>} darkMode={darkMode} />
           <Route path="/terms" element={< TermsAndConditions/>} darkMode={darkMode} />
+          <Route path="/404" element={< NotFound/>} darkMode={darkMode} />
 
         </Routes>
       </Router>
