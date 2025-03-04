@@ -22,17 +22,32 @@ const ProductPage = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([]);
   const handleAddToCart = () => {
-    setCartItems([
-      ...cartItems,
-      {
-        id: product.id,
-        name: product.clotheName,
-        price: product.discountPrice,
-        image: product.carouselImg[0],
-      },
-    ]);
+    setCartItems((prevCartItems) => {
+      const existingItemIndex = prevCartItems.findIndex((item) => item.id === product.id);
+  
+      if (existingItemIndex !== -1) {
+        // If the item exists, increase its quantity
+        return prevCartItems.map((item, index) =>
+          index === existingItemIndex ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      } else {
+        // If the item is not in the cart, add it with quantity 1
+        return [
+          ...prevCartItems,
+          {
+            id: product.id,
+            name: product.clotheName,
+            price: product.discountPrice,
+            image: product.carouselImg[0],
+            quantity: 1,
+          },
+        ];
+      }
+    });
+  
     setCartOpen(true);
   };
+  
 
   // 🛑 Moved hooks before any return statements
   const [darkMode, setDarkMode] = useState(
@@ -63,6 +78,18 @@ const ProductPage = () => {
   const removeFromCart = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));
   };
+  const updateQuantity = (id, newQuantity) => {
+    if (newQuantity === 0) {
+      removeFromCart(id); // Remove item if quantity reaches 0
+    } else {
+      setCartItems((prevCartItems) =>
+        prevCartItems.map((item) =>
+          item.id === id ? { ...item, quantity: newQuantity } : item
+        )
+      );
+    }
+  };
+  
   return (
     <div className="font-[sora]">
       <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
@@ -145,12 +172,15 @@ const ProductPage = () => {
 <OurProducts />
 <NewsletterSection />
 {/* Sidebar */}
-<CartSidebar
+ <CartSidebar
         cartItems={cartItems}
         isOpen={cartOpen}
         onClose={() => setCartOpen(false)}
-        removeFromCart={removeFromCart} // ✅ Fix: Ensure function is passed
-      /><Footer darkMode={darkMode} />
+        removeFromCart={removeFromCart}
+        updateQuantity={updateQuantity}  // ✅ Fix: Ensure function is passed
+      />
+      
+      <Footer darkMode={darkMode} />
       </div>
     </div>
   );
