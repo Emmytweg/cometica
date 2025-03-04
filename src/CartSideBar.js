@@ -4,7 +4,7 @@ import React from "react";
 const CartSidebar = ({ cartItems, isOpen, onClose, removeFromCart, updateQuantity }) => {
   return (
     <div
-      className={`fixed z-50 top-20 right-0 h-screen overflow-auto w-96 bg-white text-black shadow-lg p-5 transform transition-transform duration-300 flex flex-col ${
+      className={`fixed z-50 top-20 right-0 h-screen overflow-auto w-screen lg:w-96 bg-white text-black shadow-lg p-5 transform transition-transform duration-300 flex flex-col ${
         isOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
